@@ -19,10 +19,10 @@ def timer(func):
 	"""Print the runtime of the decorated function"""
 	@functools.wraps(func)
 	def wrapper_timer(*args, **kwargs):
-		start_time = time.perf_counter()    # 1
+		start_time = time.perf_counter()    # 1 Start the timer
 		value = func(*args, **kwargs)
-		end_time = time.perf_counter()      # 2
-		run_time = end_time - start_time    # 3
+		end_time = time.perf_counter()      # 2 Stop the timer
+		run_time = end_time - start_time    # 3 Calculate the runtime
 		print(f"Finished {func.__name__!r} in {run_time:.4f} secs")
 		return value
 	return wrapper_timer
@@ -92,6 +92,11 @@ def log(func):
 		val = func(*args, **kwargs)
 		return val
 	return wrapper_log
+
+
+################
+# Examples:
+################
 # @log
 # def run(a, b, c=9):
 # 	return a + b + c

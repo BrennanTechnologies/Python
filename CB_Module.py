@@ -32,6 +32,12 @@ def print_function_name():
 	
 	print("\n\t EXECUTING: ==> \t ***** " + str(sys._getframe().f_code.co_name) + " *****")
 
+### Say Hello:
+### -----------------------------------
+def say_hello(name="World"):
+	return f"Hello {name}"
+	
+
 ### Write Log:
 ### -----------------------------------
 def write_log(msg, cat="INFO"):
@@ -83,7 +89,28 @@ def linear_search(arr, n):
 
 ### Binary Search
 ### -----------------------------------
+'''
+Binary Search:
+	- The array must be sorted
+	- The algorithm compares the target value to the middle element of the array
+	- If they are not equal, the half in which the target cannot lie is eliminated and the search continues on the remaining half, again taking the middle element to compare to the target value, and repeating this until the target value is found
+	- If the search ends with the remaining half being empty, the target is not in the array
+	- The algorithm is O(log n)
+	- The algorithm is O(1) space complexity
+	- The algorithm is O(n) time complexity
+'''
 def binary_search(arr, n, start=0, end=None):
+	'''
+	example:
+		index_of_target_value = binary_search(arr, n, start, end)
+
+		- arr: array
+		- n: target value
+		- start: start index
+		- end: end index
+		- mid: middle index
+		- return: index of target value
+	'''
 	if end is None:
 		end = len(arr) - 1
 
