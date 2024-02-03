@@ -5,6 +5,13 @@
 '''
 
 import time
+'''
+The epoch is the point where the time starts, the return value of time.gmtime(0). 
+
+It is January 1, 1970, 00:00:00 (UTC) on all platforms.
+
+'''
+
 ### time.time() returns the current time in seconds since the epoch.
 t = time.time()
 print("t: " + str(t))
